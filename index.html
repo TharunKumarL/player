@@ -32,6 +32,7 @@
             // Fallback to embedded Google Drive player
             videoPlayer.onerror = function() {
                 document.body.innerHTML = `
+                <h1>Hello</h1>
                     <h2>🎥 Watch Your Video</h2>
                     <iframe src="https://drive.google.com/file/d/${videoId}/preview" width="80%" height="400px" allow="autoplay"></iframe>
                 `;
