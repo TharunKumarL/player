@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        video { width: 80%; max-width: 720px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h2>🎥 Watch Your Video</h2>
+    <video id="videoPlayer" controls>
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // 🔍 Get video_id from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get("video_id");
+
+        if (videoId) {
+            document.getElementById("videoPlayer").src = `https://drive.google.com/uc?id=${videoId}&export=download`;
+        } else {
+            document.body.innerHTML = "<h3>❌ No video found!</h3>";
+        }
+    </script>
+
+</body>
+</html>
